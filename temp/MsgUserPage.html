@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<head>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <ul class="header">
+        <div class="homeButton">
+            <form action="/home">
+                <button class="profileBtn">Profile</button>
+            </form>
+        </div>
+    </ul>
+    <div class="chatBox">
+        <div class="userBody"> 
+            <div class="users">
+                {% for key, user in userList.iteritems() %}
+                <a href="/setSendingto/?sendTo={{user.username}}">
+                <button class="userBtn">{{user.username}}</button><br>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="msgBody">        
+        <div class="chatHistory">
+            <h1>{{sendingTo}}</h1>
+            <div class="timeStamp" id="update">
+                {% for msgs in msgDic %}
+                <h1>{{msgs.sender}}</h1>
+                <p>{{msgs.stamp}}</p>  
+                {% if msgs.filename is none %}
+                    {{msgs.message}}
+                    {{msgs.status}}
+                {% elif  msgs.filename %}
+                    {{msgs.message}}
+                    {{msgs.filename}}
+                    {{msgs.status}}
+                {% endif %}
+
+                {% endfor %} 
+            </div>
+        </div>
+        <form action="/sendMessage"  >
+            <input required type="text" name="message" placeholder="Message">
+            <input type="submit" value="Send Message">
+        </form> 
+        <form action="/sendFile" enctype="multipart/form-data" method="post">
+            <input type="file" name="fileSent" placeholder="Attach File">
+            <input type="submit" value="Send File">
+
+
+
+        </form>
+    </div>
+    <script type="text/javascript">
+    
+        // $(document).ready(function(){
+        // setTimeout(function(){
+        // $('#update').html(msgDic);}, 2000);
+        // });
+    //     setTimeout(function(){
+    //        location.reload();
+    //    },2000);
+
+    </script>
+
+</body>
+</html>
+
+<style>
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+.msgBody{
+    margin-right: 10px;
+    margin-left: 5px;
+    top:50px;
+    float: left;
+    padding-right: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    width: 78%;
+    overflow: auto;
+    /* height: 850px; */
+    height: 850px;
+    
+}
+.timeStamp{
+    /* text-align: right; */
+    float: left;
+    padding-right: 2%;
+}
+
+.chatHistory{
+    background-color: rgb(177, 177, 177);
+    width: 99%;
+    height: 80%;
+    border-radius: 15px;
+    border: 1px solid rgb(146, 146, 146);
+    padding-left: 10px;
+    overflow: auto;
+}
+
+.chatHistory h1{
+    font-size: 20px;
+    text-align: center;
+}
+
+.msgBody input[type="text"]
+{
+    margin-left: 30px;
+    color: black;
+    width: 85%;
+    margin-top: 20px; 
+    border: none;
+    border-top: 1px solid rgb(0, 0, 0);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    
+    font-size: 16px;
+}
+
+.msgBody input[type="submit"] 
+{
+    border:none;
+    outline: none;
+    height: 50px;
+    color: ghostwhite;
+    font-size: 12px;
+    background: darkred;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 10%;
+}
+
+.header{
+    background-color: white;
+    height: 50px;
+    margin: 0;
+    border-bottom: 1px solid black;
+}
+
+.chatBox{
+    top:50px;
+    float: left;
+    padding-right: 5px;
+    
+    width: 18%;
+    overflow: auto;
+    /* height: 850px; */
+    height: 850px;
+    background: rgba(0, 0,0,.5);
+}
+
+.userBody{
+    height: 850px;
+    
+}
+
+.profileBtn{
+    position: fixed;
+    margin-left: 85%;
+    margin-top: 1%; 
+    border:none;
+    outline: none;
+    height: 30px;
+    width: 100px;
+    color: ghostwhite;
+    font-size: 12px;
+    background:rgba(0, 0,0,.5);
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.userBtn{
+    margin: 5px 2px;
+    margin-right: 10px;
+    border:none;
+    outline: none; 
+    height: 30px;
+    min-width: 250px;
+    width: 100%;
+    color: ghostwhite;
+    font-size: 12px;
+    background:limegreen;
+    cursor: pointer;
+}
+
+.userBtn:hover{
+    background: black;
+    color: white;
+}
+</style>

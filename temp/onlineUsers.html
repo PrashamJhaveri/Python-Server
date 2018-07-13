@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    
+    </script>
+</head>
+<body>
+    <ul class="header">
+        <div class="homeButton">
+            <form action="/home">
+                <button class="profileBtn">Profile</button>
+            </form>
+        </div>
+    </ul>
+    <div class="chatBox">
+        <div class="userBody"> 
+            <div class="users">
+                {% for key, user in userList.iteritems() %}
+                <a href="/setSendingto/?sendTo={{user.username}}">
+                <button class="userBtn">{{user.username}}</button><br>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+   
+<div>
+
+</body>
+</html>
+
+<style>
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.header{
+    background-color: white;
+    height: 50px;
+    margin: 0;
+    border-bottom: 1px solid black;
+}
+
+.chatBox{
+    position: fixed;
+    top:50px;
+    padding-right: 5px;
+    background: white;
+    width: auto;
+    overflow: auto;
+    /* height: 850px; */
+    height: 850px;
+    background: rgba(0, 0,0,.5);
+}
+
+.userBody{
+    height: 850px;
+    
+}
+
+.profileBtn{
+    position: fixed;
+    margin-left: 85%;
+    margin-top: 1%; 
+    border:none;
+    outline: none;
+    height: 30px;
+    width: 100px;
+    color: ghostwhite;
+    font-size: 12px;
+    background:rgba(0, 0,0,.5);
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.userBtn{
+    margin: 5px 2px;
+    margin-right: 10px;
+    border:none;
+    outline: none; 
+    height: 30px;
+    min-width: 250px;
+    width: 100%;
+    color: ghostwhite;
+    font-size: 12px;
+    background:limegreen;
+    cursor: pointer;
+}
+
+.userBtn:hover{
+    background: black;
+    color: white;
+}
+</style>

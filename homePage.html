@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+    <body style="margin: 0;
+    height:100%;
+    width:100%;
+    padding:0;">
+            <ul style="background: url('http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/02/Yosemite-National-Park-HD-Wallpapers.jpg');
+                height:400px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position-y:center;
+                width: fixed;
+                padding-top: 0px;
+                margin: 0;
+                box-sizing:border-box;">
+                <div >
+                    <form style="padding-top: 5px;" action="/logoutScreen">
+                        <button style="  position: fixed;
+                            margin-left: 85%;
+                            margin-top: 1%; 
+                            border:none;
+                            outline: none;
+                            height: 30px;
+                            width: 100px;
+                            color: ghostwhite;
+                            font-size: 12px;
+                            background:rgba(0, 0,0,.5);
+                            cursor: pointer;
+                            border-radius: 20px;">Log Out
+                        </button>
+                    </form> 
+                    <form action="/MessegesScreen">
+                        <button style="  position: absolute;
+                            margin-left: 42%;
+                            margin-top: 1%;
+                            border:none;
+                            outline: none; 
+                            height: 30px;
+                            width: 100px;
+                            color: ghostwhite;
+                            font-size: 12px;
+                            background:rgba(0, 0,0,.5);
+                            cursor: pointer;
+                            border-radius: 20px;">Messages
+                        </button>
+                    </form>
+                    <div>
+                        <form action="/EditProfileScreen">
+                            <button style="  position: absolute;
+                                margin-left: 30px;
+                                margin-top: 1%;
+                                border:none;
+                                outline: none; 
+                                height: 30px;
+                                width: 100px;
+                                color: ghostwhite;
+                                font-size: 12px;
+                                background:rgba(0, 0,0,.5);
+                                cursor: pointer;
+                                border-radius: 20px;">Edit Profile
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </ul>
+            <div style="padding-left:40%; margin-top: 0">
+                    <img style= "border-radius: 50%;
+                    border: 5px solid white;         
+                    margin-left: 2%;
+                    margin-top: -12.5%;
+                    object-fit: cover;
+                    width: 200px;
+                    height: 200px;
+                    " src={userPic:}> 
+            </div>
+        
+       <section style="padding-left: 8%;padding-top: 5%"> 
+            <div style=" height: 250px; width: 1200px;  background:rgba(0, 0,0,.5); border-radius: 20px;">
+                    <div>
+                        <h1 style="
+                            font-family: sans-serif;
+                            font-size: 0.45cm;
+                            margin-left: 5%;
+                            padding-top: 40px;
+                            margin-top: -12.5%;">
+                            {userName:}<br> <br>Postition: {userPosition:} <br> <br> Description: {userBio:}
+                        </h1> 
+                    </div>
+            </div>
+        </section>
+    </body>
+</html>

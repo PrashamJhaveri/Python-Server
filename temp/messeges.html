@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+    <body style="margin: 0;
+    height:100%;
+    width:100%;
+    padding:0;">
+
+    
+    <table>
+        </table>
+            <ul style="background: url('http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/02/Yosemite-National-Park-HD-Wallpapers.jpg');
+                height:50px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position-y:center;
+                width:1920px;
+                padding-top: 0px;
+                margin: 0;
+                box-sizing:border-box;">
+                <div >
+                    <div>
+                        <form action="/home">
+                            <button style="  position: absolute;
+                                margin-left: 30px;
+                                margin-top: 1%;
+                                border:none;
+                                outline: none; 
+                                height: 30px;
+                                width: 100px;
+                                color: ghostwhite;
+                                font-size: 12px;
+                                background:rgba(0, 0,0,.5);
+                                cursor: pointer;
+                                border-radius: 20px;">Profile
+                            </button>
+                        </form>
+                    </div>
+                    <div>
+                            <form action="/sendMesssage">
+                                <button style="  position: absolute;
+                                    margin-left: 500px;
+                                    margin-top: 30%;
+                                    border:none;
+                                    outline: none; 
+                                    height: 30px;
+                                    width: 100px;
+                                    color: ghostwhite;
+                                    font-size: 12px;
+                                    background:rgba(0, 0,0,.5);
+                                    cursor: pointer;
+                                    border-radius: 20px;">Send RANDOM MSG
+                                </button>
+                            </form>
+                        </div>
+                </div>
+            </ul>
+            <h1>Online Users</h1>
+            <dl>
+                {% for key, user in userList.iteritems() %}
+                <button style="
+                margin: 5px 2px;
+                border:none;
+                outline: none; 
+                height: 30px;
+                width: 80px;
+                color: ghostwhite;
+                font-size: 12px;
+                background:limegreen;
+                cursor: pointer;
+                border-radius: 20px;">{{user.username}}</button><br>
+                {% endfor %}
+           </dl>
+    </body>
+</html>

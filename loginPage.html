@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <title> Login Page </title>
+
+    </head> 
+    <body>
+        </div>
+        <div class="loginBox">
+            <h2>Log In</h2>        
+            <form action="/signin" >
+                <input required type="text" name="username" placeholder="Username">
+                <input required type="password" name="password" placeholder="Password">
+                <input type="submit" value="Log In">
+            </form> 
+            <form action="/signUpScreen">
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+    </body>
+</html>
+
+<style>
+body{
+    
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    background: url("http://www.adelehuxley.com/wp-content/uploads/2016/01/bg-blurred-91.jpg");
+    justify-content: center;
+    background-size:cover;
+    font-family: sans-serif;
+    background-repeat: no-repeat;
+
+}
+
+.loginBox
+{
+    
+    position: relative;
+    margin-top: 200px;
+    top: 50%;
+    bottom: 1000%;
+    left: 50%;
+    width: 350px;
+    height: 420px;
+    border-radius: 20px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    background:rgba(0, 0,0,.5);
+    min-width: 300px;
+    min-height: 300px; 
+}
+
+h2
+{
+    margin: 0;
+    padding: 0 0 15px;
+    color: ghostwhite;
+    text-align: center;
+}
+
+
+.loginBox input
+{
+    width:100%;
+    margin-bottom: 25px;
+}
+
+.loginBox input[type="text"], .loginBox input[type = "password"]
+{
+    border: none;
+    border-bottom: 1px solid ghostwhite;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: ghostwhite;
+    font-size: 16px;
+}
+
+.loginBox input[type="submit"] 
+{
+    border:none;
+    outline: none;
+    height: 50px;
+    color: ghostwhite;
+    font-size: 16px;
+    background: darkred;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+</style>
